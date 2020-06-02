@@ -1,14 +1,17 @@
-name: Add to Project
+name: "Add to project"
 
-  uses: skeet70/default-project-board-action@v1
+on:
+  issues:
+    types:
+      - opened
 
-with:
-    # issue number, use {{ github.event.issue.number }}
-    issue: {{ github.event.issue.numer }}
-    # repository path, use {{ github.repository }}
-    repository: {{ github.repository }}
-    # project board, use the number in the slug for that board
-    project: 1
-    # GitHub token, use {{ secrets.GITHUB_TOKEN }}
-    github_token: {{ secrets.GITHUB_TOKEN }}
-    
+jobs:
+  add_to_project:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: skeet70/default-project-board-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          issue: ${{ github.event.issue.number }}
+          project: 1
