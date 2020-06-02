@@ -1,4 +1,4 @@
-name: "Add to project"
+name: "Default Project"
 
 on:
   issues:
