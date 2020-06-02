@@ -1,0 +1,15 @@
+name: autoproject
+
+on:
+  pull_request:
+    branches: 
+      - master
+  issues:
+    type: [opened, reopened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: All in one project
+        uses: masutaka/github-actions-all-in-one-project@1.1.0
