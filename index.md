@@ -3,4 +3,4 @@
 ## Welcome 
 
 ### Files
-- [View analysis](/KnobeReplication/Knobe-2003-Replication-Analysis) 
+- [View analysis](analysis/Study1_Analysis.html) 
